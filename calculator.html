@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function add()
+        {
+            var a,b,c;
+            a=document.getElementById("no1").value;
+            b=document.getElementById("no2").value;
+            c=parseInt(a)+parseInt(b);
+
+            document.getElementById("no3").value=c;
+            
+        }
+        function sub(){
+            var a,b,c;
+            a=document.getElementById("no1").value;
+            b=document.getElementById("no2").value;
+            c=parseInt(a)-parseInt(b);
+             
+            document.getElementById("no3").value=c;
+        }
+        function multiply(){
+            var a,b,c;
+            a=document.getElementById("no1").value;
+            b=document.getElementById("no2").value;
+            c=parseInt(a)*parseInt(b);
+             
+            document.getElementById("no3").value=c;
+        }
+        function divide(){
+            var a,b,c;
+            a=document.getElementById("no1").value;
+            b=document.getElementById("no2").value;
+            c=parseInt(a)/parseInt(b);
+             
+            document.getElementById("no3").value=c;
+        }
+        </script>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Button Styles</h2>
+        <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-link">Link</button>  
+        <button type="button" class="btn btn-primary">Primary</button>
+    </div>
+    <div class="container">
+        <h3>Bordered Table</h3>
+        <p>The .table-bordered class adds borders to a table:</p>            
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john@example.com</td>
+            </tr>
+            <tr>
+              <td>Mary</td>
+              <td>Moe</td>
+              <td>mary@example.com</td>
+            </tr>
+            <tr>
+              <td>July</td>
+              <td>Dooley</td>
+              <td>july@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="container">
+            <h4>Vertical (basic) form</h4>
+            <form action="/action_page.php">
+              <div class="form-group">
+                <label for="no1">Enter number 1:</label>
+                <input type="text" class="form-control" id="no1" placeholder="Enter no1" name="email">
+              </div>
+              <div class="form-group">
+                <label for="no2">Enter number 2:</label>
+                <input type="text" class="form-control" id="no2" placeholder="Enter no2" name="pwd">
+              </div>
+              <div class="form-group">
+                <label for="no3">Enter number 3:</label>
+                <input type="text" class="form-control" id="no3" placeholder="Enter no3" name="pwd">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+              </div>
+              <button type="button" class="btn btn-default" onclick="add()">ADD</button>
+              <button type="button" class="btn btn-default" onclick="sub()">Subtract</button>
+              <button type="button" class="btn btn-default" onclick="multiply()">multiply</button>
+              <button type="button" class="btn btn-default" onclick="divide ()">divide</button>
+            </form>
+          </div>
+          <div class="container">
+            <h5>Inline form with .sr-only class</h5>
+            <p>Make the viewport larger than 768px wide to see that all of the form elements are inline, left aligned, and the labels are alongside.</p>
+            <form class="form-inline" action="/action_page.php">
+              <div class="form-group">
+                <label class="sr-only" for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email"  name="email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+         
+
+</body>
+</html>

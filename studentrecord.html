@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Record</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    fieldset {
+      border: 1px solid #000;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 1.1rem;
+      width: auto;
+      padding: 0 10px;
+    }
+  </style>
+  <script>
+    function calculateResult() {
+     
+
+      const checkbox = document.getElementById("medical");
+      
+      const mark1 = parseFloat(document.getElementById("firstTermMarks").value);
+      const mark2 = parseFloat(document.getElementById("secondTermMarks").value);
+       if (isNaN(mark1) || isNaN(mark2) || mark1 < 0 || mark2 < 0 || mark1 > 100 || mark2 > 100) {
+        alert("Please enter valid marks between 0 and 100.");
+        return;
+      }
+  
+      const totalMarks = mark1 + mark2;
+       
+      const percentage = (totalMarks / 200) * 100;
+     
+      let grade = "";
+
+      if(checkbox.checked)
+    {
+     
+       if (percentage >= 80) grade = "A";
+      else if (percentage >= 60) grade = "B";
+      else grade = "c";
+    }
+    else
+    {
+     if (percentage >= 75) grade = "A";
+      else if (percentage >= 50) grade = "B";
+      else grade = "c";
+    }
+       alert("Welcome to the Grade Calculator!");
+
+      // Check if user confirmed the checkbox
+      // if (!checkbox.checked) {
+      //   alert("Please confirm the data by checking the box.");
+      //   return;
+      // }
+
+      // Validate marks
+     
+
+     
+
+      // Show output in fields
+      document.getElementById("Percentage").value = percentage.toFixed(2) + "%";
+      document.getElementById("Grades").value = grade;
+
+      // Also display result in text
+      document.getElementById("result").innerHTML =
+        `Total Marks: ${totalMarks}<br>Percentage: ${percentage.toFixed(2)}%<br>Grade: ${grade}`;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2>Student Record</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label>First term Marks:</label><br><br>
+        <label>Second term Marks:</label>
+      </div>
+
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="firstTermMarks" placeholder="First term marks"><br>
+        <input type="text" class="form-control" id="secondTermMarks" placeholder="Second term marks">
+      </div>
+
+      <div class="col-sm-5">
+        <fieldset>
+          <legend>STREAM</legend>
+          <div class="form-check">
+            <input class="form-check-input" type="radio"name="r1" id="medical">
+            <label class="form-check-label" for="medical"> Medical</label>
+          </div><br>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r1" id="nonmedical">
+            <label class="form-check-label" for="nonmedical"> Non-Medical</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="checkbox">
+      <label><input type="checkbox" id="confirmCheckbox"> I confirm that the data is correct</label>
+    </div>
+
+    <h3>Student Grade Calculator</h3>
+     <div class="container">
+              <h3>Button Styles</h2>
+             
+    <button onclick="calculateResult()">CALCULATE PERCENTAGE</button>
+       
+        <button onclick="calculateResult()">CALCULATE GRADE</button>
+        <button type="button" class="btn btn-clear">CLEARr</button>
+        <button type="button" class="btn btn-exit">EXIT</button>  
+             
+
+   
+
+     <div class="form-group">
+              <label for="Percentage">Percentage:</label>
+              <input type="text" class="form-control" id="Percentage" placeholder="Percentage" name="percent">
+            </div>
+            <div class="form-group">
+              <label for="Grade">Grade:</label>
+              <input type="Grades" class="form-control" id="Grades" placeholder="Grade" name="grades">
+
+    <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+
+  </div>
+</body>
+</html>
